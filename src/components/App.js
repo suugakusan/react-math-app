@@ -20,7 +20,19 @@ const App =()=> {
         <button className="btn btn-success">完了</button>
         <button className="btn btn-danger">削除</button>
       </form>
-      <h4>未完了一覧</h4>
+      <h4>未完了</h4>
+      <table className="table table-hover">
+        <thead>
+          <tr>
+            <th>タイトル</th>
+            <th>内容</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <h4>完了</h4>
       <table className="table table-hover">
         <thead>
           <tr>
