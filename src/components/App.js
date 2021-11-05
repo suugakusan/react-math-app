@@ -45,8 +45,8 @@ const App =()=> {
         </thead>
         <tbody>
           {
-            state.map(item => (
-              <tr>
+            state.map((item, index) => (
+              <tr key={index}>
                 <td>{item.id}</td>
                 <td>{item.title}</td>
                 <td>{item.body}</td>
