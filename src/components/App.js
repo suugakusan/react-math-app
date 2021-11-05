@@ -43,6 +43,15 @@ const App =()=> {
           </tr>
         </thead>
         <tbody>
+          {
+            state.map(item => (
+              <tr>
+                <td>{item.id}</td>
+                <td>{item.title}</td>
+                <td>{item.body}</td>
+              </tr>
+            ))
+          }
         </tbody>
       </table>
       <h4>完了</h4>
