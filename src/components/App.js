@@ -1,6 +1,8 @@
 import React,{ useReducer, useState } from 'react'
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+import Item from './Item'
 import reducer from '../reducers'
 const App =()=> {
   const [state, dispatch] = useReducer(reducer, [])
@@ -44,23 +46,7 @@ const App =()=> {
           </tr>
         </thead>
         <tbody>
-          {
-            state.map((item, index) => {
-              const id = item.id
-              const ClickDeleteButton = () =>{
-                dispatch({ type: 'DELETE_ITEM', id})
-              }
-              return(
-                <tr key={index}>
-                  <td>{id}</td>
-                  <td>{item.title}</td>
-                  <td>{item.body}</td>
-                  <td><button type="button" className="btn btn-primary">完了</button>
-                  <button type="button" className="btn btn-danger" onClick={ClickDeleteButton}>削除</button>　</td>
-                </tr>
-              )
-            })
-          }
+          { state.map((item, index) => (<Item key={index} item={item} dispatch={dispatch}/>))}
         </tbody>
       </table>
       <h4>完了</h4>
