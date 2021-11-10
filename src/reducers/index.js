@@ -7,6 +7,7 @@ const items = (state=[], action) => {
       return [...state, {id, ...item}]
     case 'FINISH_ITEM':
     case 'DELETE_ITEM':
+      return state.filter(item => item.id !== action.id)
       
     default:
       return state
