@@ -45,14 +45,21 @@ const App =()=> {
         </thead>
         <tbody>
           {
-            state.map((item, index) => (
-              <tr key={index}>
-                <td>{item.id}</td>
-                <td>{item.title}</td>
-                <td>{item.body}</td>
-                <td><button type="button" className="btn btn-primary">完了</button><button type="button" className="btn btn-danger">削除</button>　</td>
-              </tr>
-            ))
+            state.map((item, index) => {
+              const id = item.id
+              const ClickDeleteButton = () =>{
+                dispatch({ type: 'DELETE_ITEM', id})
+              }
+              return(
+                <tr key={index}>
+                  <td>{id}</td>
+                  <td>{item.title}</td>
+                  <td>{item.body}</td>
+                  <td><button type="button" className="btn btn-primary">完了</button>
+                  <button type="button" className="btn btn-danger" onClick={ClickDeleteButton}>削除</button>　</td>
+                </tr>
+              )
+            })
           }
         </tbody>
       </table>
