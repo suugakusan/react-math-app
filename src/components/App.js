@@ -3,9 +3,11 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Item from './Item'
+import FinishItem from './FinishItem'
 import reducer from '../reducers'
 const App =()=> {
   const [state, dispatch] = useReducer(reducer, [])
+  const [state2, dispatch2] = useReducer(reducer, [])
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const addItem = e => {
@@ -59,6 +61,7 @@ const App =()=> {
           </tr>
         </thead>
         <tbody>
+          { state2.map((item, index) => (<FinishItem key={index} item={item} dispatch2={dispatch2}/>))}
         </tbody>
       </table>
     </div>
