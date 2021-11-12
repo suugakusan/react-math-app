@@ -1,12 +1,13 @@
 import React from 'react'
 
-const Item = ({ dispatch, item }) => {
+const Item = ({ dispatch, dispatch2, item }) => {
   const id = item.id
   const ClickDeleteButton = () =>{
     dispatch({ type: 'DELETE_ITEM', id})
   }
   const ClickFinishButton = () =>{
     dispatch({ type: 'FINISH_ITEM', id})
+    dispatch2({ type: 'FINISH_ITEM', id})
   }
   return(
     <tr>
@@ -18,5 +19,11 @@ const Item = ({ dispatch, item }) => {
     </tr>
   )
 }
+
+
+
+
+
+
 
 export default Item
