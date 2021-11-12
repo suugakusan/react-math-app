@@ -6,10 +6,7 @@ const items = (state=[], action) => {
       const id = length === 0 ?  1 : state[length - 1].id +1
       return [...state, {id, ...item}]
     case 'FINISH_ITEM':
-      return state
-    case 'FINISH_ITEM':
-      const state2={id: 1, title: 'a', body: 'a'}
-      return state2
+      return state.filter(item => item.id !== action.id)
     case 'DELETE_ITEM':
       return state.filter(item => item.id !== action.id)
       
